@@ -1,0 +1,132 @@
+/* Reset básico de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ========================
+     Estilo do Corpo da Página
+  ========================= */
+  body {
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte padrão */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    background-color: #f2f2f2; /* Fundo cinza claro */
+  }
+  
+  /* ========================
+     Container Principal (.hoteis)
+  ========================= */
+  .hoteis {
+    position: relative;
+    background-image: url('./assets/bg-decorativo.svg'); /* Imagem de fundo decorativa */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 600px;
+    max-width: 700px; /* Limita o tamanho em telas maiores */
+    min-height: 100vh; /* Garante altura total da tela */
+    padding: 60px 20px 20px; /* Espaço interno (topo maior por causa do botão) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ========================
+     Botão de Voltar (ícone no topo)
+  ========================= */
+  .btn-voltar {
+    position: absolute;
+    top: 16px;
+    left: 16px; /* Posição fixa no canto superior esquerdo */
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    border: #000000; /* Corrigir: falta '1px solid' se quiser uma borda visível */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10; /* Garante que fique acima dos outros elementos */
+  }
+  
+  .btn-voltar img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* ========================
+     Cabeçalho da Página
+  ========================= */
+  header {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 2.5vw, 2rem); /* Responsivo */
+    color: #000;
+    position: relative;
+  }
+  
+  header h1 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  header .selo {
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    width: 36px;
+    height: 36px;
+    /* Exemplo: pode ser usado para ícone ou selo institucional */
+  }
+  
+  /* ========================
+     Lista de Hotéis
+  ========================= */
+  #hotel-list {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* ========================
+     Card de Hotel
+  ========================= */
+  .lista-hotel {
+    background-color: #fff9c4; /* Amarelo claro */
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 0.7rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-size: 0.95rem;
+  }
+  
+  .lista-hotel h2 {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lista-hotel p {
+    color: #444;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+  
+  /* ========================
+     Rodapé
+  ========================= */
+  footer {
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  footer img {
+    height: 48px;
+  }
+  
