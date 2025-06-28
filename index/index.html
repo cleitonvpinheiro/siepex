@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de Eventos Acadêmicos - Siepex">
+  <title>Siepex - Sistema de Eventos Acadêmicos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Container principal do aplicativo -->
+  <div class="app">
+
+    <!-- Topo com imagem de fundo decorativa -->
+    <div class="topo-com-fundo">
+
+      <!-- Cabeçalho da página com duas logos -->
+      <header class="top-header">
+        <img src="./assets/Logo-Siepex.png" alt="Logo Sustentabilidade - Sistema de Eventos Acadêmicos" class="logo-sustentavel" />
+        <img src="./assets/Logo-11Siepex.png" alt="Logo 11º Siepex" class="logo-siepex" />
+      </header>
+
+      <!-- Menu de navegação -->
+      <nav class="nav-menu" role="navigation" aria-label="Menu principal">
+        <button class="nav-menu-button" id="apresentadores" aria-label="Apresentadores">
+          <img src="./assets/Apresentadores.png" alt="" aria-hidden="true" />
+          <span>Apresentadores</span>
+        </button>
+        <button class="nav-menu-button" id="salas" aria-label="Salas">
+          <img src="./assets/Salas.png" alt="" aria-hidden="true" />
+          <span>Salas</span>
+        </button>
+        <button class="nav-menu-button" id="trabalhos" aria-label="Trabalhos">
+          <img src="./assets/Trabalhos.png" alt="" aria-hidden="true" />
+          <span>Trabalhos</span>
+        </button>
+        <button class="nav-menu-button" id="visitantes" aria-label="Visitantes">
+          <img src="./assets/Visitantes.png" alt="" aria-hidden="true" />
+          <span>Visitantes</span>
+        </button>
+      </nav>
+
+      <!-- Programação -->
+      <section class="programacao content-section" aria-labelledby="programacao-title">
+        <h2 id="programacao-title" class="section-title">📅 Programação</h2>
+        <div class="container-programacao">
+          <div class="carousel-wrapper">
+            <div class="carousel">
+              <article class="evento">
+                <img src="./assets/palestra.png" alt="Evento 1" />
+                <div class="evento-info">
+                  <div class="data-circulo"><div class="mes">Out.</div><div class="dia">16</div></div>
+                  <div><strong>Palestra Sobre I.A</strong><p>Sala 13 prédio 5 - 13:30h</p></div>
+                </div>
+              </article>
+              <article class="evento">
+                <img src="./assets/palestra.png" alt="Evento 2" />
+                <div class="evento-info">
+                  <div class="data-circulo"><div class="mes">Out.</div><div class="dia">17</div></div>
+                  <div><strong>Workshop de Robótica</strong><p>Sala 20 - 15:00h</p></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Avisos -->
+      <section class="avisos content-section" aria-labelledby="avisos-title">
+        <h2 id="avisos-title" class="section-title">📢 Avisos</h2>
+        <div class="avisos-container">
+          <article class="aviso-card">
+            <div class="aviso-meta">
+              <time datetime="2025-03-24T13:00:00">24/03/25 - 13m atrás</time>
+            </div>
+            <h3 class="aviso-title"><span>⚠️</span> Atenção</h3>
+            <div class="aviso-content">
+              <p>Último dia para a submissão dos trabalhos acadêmicos!!</p>
+            </div>
+            <div class="aviso-action">Acesse o portal e faça a sua publicação!</div>
+            <div class="aviso-signature"><b>Por PROEX</b></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Rodapé -->
+      <footer class="rodape">
+        <div class="logos-rodape">
+          <img src="./assets/Logo-Uergs-Proex.png" alt="Logo UERGS - Pró-reitoria de Extensão" />
+        </div>
+        <p class="sr-only">Sistema desenvolvido pela UERGS para gestão de eventos acadêmicos</p>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>

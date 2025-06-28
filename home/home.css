@@ -1,0 +1,267 @@
+/* ------------------------------
+   RESET BÁSICO
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   BODY GERAL
+--------------------------------*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------
+   CONTAINER PRINCIPAL
+--------------------------------*/
+.container {
+  width: 100%;
+  max-width: 550px;
+  background-color: #9DE699;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ------------------------------
+   TOPO / HEADER
+--------------------------------*/
+.topo {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   ÁREA DO LOGO E TÍTULO
+--------------------------------*/
+.logo-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo-area img.logo-uergs {
+  width: 89px;
+  height: auto;
+}
+
+/* ------------------------------
+   MENU DE BOTÕES
+--------------------------------*/
+.menu-botoes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+/* ------------------------------
+   BOTÕES PADRÕES
+--------------------------------*/
+.botao, .setor, .trabalhos, .visitante {
+  background-color: #D81B60;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  width: 78px;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.botao img,
+.setor img,
+.trabalhos img,
+.visitante img {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 5px;
+}
+
+/* ------------------------------
+   CONTEÚDO PRINCIPAL
+--------------------------------*/
+.conteudo {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   PROGRAMAÇÃO (CARDS SCROLL)
+--------------------------------*/
+.programacao {
+  margin-bottom: 32px;
+}
+
+.cards-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  min-width: 200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-info h3 {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+/* ------------------------------
+   AVISOS
+--------------------------------*/
+.avisos-container {
+  background: linear-gradient(135deg, #ffcc02, #ffd74f);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.aviso-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aviso-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffed4a, #ffe680, #ffed4a);
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.aviso-card:hover::before {
+  opacity: 0.3;
+}
+
+.aviso-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.aviso-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aviso-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.aviso-action {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 12px 0;
+  color: #333;
+}
+
+.aviso-signature {
+  text-align: right;
+  font-style: italic;
+  color: #888;
+  font-size: 0.75rem;
+  margin-top: 12px;
+}
+
+/* ------------------------------
+   RESPONSIVIDADE EXTRA
+--------------------------------*/
+@media (max-width: 480px) {
+  .logo-area {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .botao, .setor, .trabalhos, .visitante {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .cards-scroll {
+    gap: 8px;
+  }
+
+  .card {
+    min-width: 170px;
+  }
+
+  .topo {
+    padding: 16px;
+    border-radius: 16px;
+  }
+}

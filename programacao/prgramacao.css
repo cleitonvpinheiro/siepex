@@ -1,0 +1,217 @@
+/* Reset básico para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo do body */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Container principal */
+.container {
+  background: url(./assets/bg-decorativo.svg) no-repeat top center;
+  background-size: cover;
+  max-width: 500px;
+  width: 90%; /* Responsivo */
+  margin: 0 auto;
+  overflow: hidden;
+  
+  position: relative;
+}
+
+/* Botão de voltar */
+.btn-voltar {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Foco acessível */
+.btn-voltar:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Imagem da seta */
+.seta-img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Imagem do palestrante */
+ .palestrante-img {
+    width: 100%;
+    height: 310px; /* ajuste conforme necessário */
+    object-fit: cover;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom: 15px solid #006233;
+  }
+
+/* Caixa de informações */
+.info-box {
+  width: 85%;
+  max-width: 340px;
+  height: auto;
+  background-color: #d2f3d1;
+  padding: 20px;
+  margin: -80px auto 0;
+  border-radius: 51px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Título */
+.info-box h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+/* Linha de informação */
+.info-line {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.info-line img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+/* Descrição */
+.descricao {
+  margin-top: 10px;
+}
+
+.descricao strong {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.descricao p {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Caixa do mapa */
+.map-box {
+  padding: 20px;
+  margin-top: -10px;
+}
+
+.map-box img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-top: 20px;
+}
+
+/* Rodapé fixo */
+.fixo-rodape {
+  position: relative;
+  bottom: 16px;
+  max-width: 400px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  flex-wrap: wrap; /* Garante quebra se necessário */
+}
+
+/* Botão inscrever-se */
+.btn-inscrever {
+  width: 100%;
+  max-width: 286px;
+  height: 49px;
+  background-color: #3F65FF;
+  color: white;
+  font-weight: 600;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+
+/* Ícone de compartilhamento */
+.share-icon img {
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 20px auto 30px;
+  display: block;
+}
+
+/* Hover ícone */
+
+
+/* Media Query para telas menores */
+@media (max-width: 480px) {
+  .info-box {
+    padding: 16px;
+    border-radius: 32px;
+    margin: -60px auto 0;
+  }
+
+  .info-box h2 {
+    font-size: 16px;
+  }
+
+  .btn-inscrever {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .descricao p {
+    font-size: 12px;
+  }
+
+  .map-box {
+    padding: 16px;
+  }
+
+  .palestrante-img {
+    border-bottom: 10px solid #006233;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .fixo-rodape {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .share-icon img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}

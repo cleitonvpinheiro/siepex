@@ -1,0 +1,462 @@
+/* Reset e configurações gerais para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Definição de variáveis CSS para cores, sombras, bordas, transições */
+:root {
+  --primary-color: #C4145C;
+  --secondary-color: #F1B51C;
+  --background-color: #e0f2e9;
+  --card-background: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #666;
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos básicos para o body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--background-color);
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Container principal da aplicação */
+.app {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  min-height: 100vh;
+}
+
+/* Seção superior com fundo decorativo e gradiente */
+.topo-com-fundo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  background: url(./assets/bg-decorativo.svg);
+}
+
+/* Sobreposição translúcida para efeito visual */
+.topo-com-fundo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Garante que o conteúdo interno fique acima da sobreposição */
+.topo-com-fundo > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cabeçalho superior com logo e menu */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Logos com sombra e transição suave */
+.logo-sustentavel,
+.logo-siepex {
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Tamanhos máximos para as logos */
+.logo-sustentavel {
+  width: 100px;
+  height: auto;
+  max-height: 90px;
+}
+
+.logo-siepex {
+  width: 120px;
+  height: auto;
+  max-height: 110px;
+}
+
+/* Efeito hover para ampliar ligeiramente as logos */
+
+/* Menu de navegação em grid com 4 colunas e espaçamento */
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Botões do menu com gradiente, bordas arredondadas e sombra */
+.nav-menu-button {
+  background: linear-gradient(135deg, var(--primary-color), #e91e63);
+  border: none;
+  border-radius: var(--border-radius);
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animação de brilho passando sobre o botão */
+.nav-menu-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+/* Ao passar o mouse, o brilho desliza e o botão levita */
+
+
+
+
+.nav-menu-button:active {
+  transform: translateY(0);
+}
+
+/* Ícones dentro do botão com sombra e espaçamento */
+.nav-menu-button img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Seções de conteúdo com espaçamento interno e inferior */
+.content-section {
+  padding: 20px 16px;
+  margin-bottom: 16px;
+}
+
+/* Títulos das seções com cor, peso e alinhamento */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Container da programação com gradiente e sombra */
+.container-programacao {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(135deg, var(--secondary-color), #ffcc02);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  box-shadow: var(--shadow-light);
+}
+
+ .carousel-wrapper {
+  width: 100%;
+  max-width: 388px;
+  height: 217px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.carousel {
+  gap: 15px;  
+  display: flex;
+  width: max-content;
+  animation: slide 50s linear infinite;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-776px); } /* 388 * 2 cards */
+}
+
+/* Cartão de evento com bordas arredondadas, sombra e transição */
+.evento {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+}
+
+/* Efeito hover levitando o evento */
+.evento:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do evento ocupando 100% da largura e altura fixa */
+.evento img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Informações do evento posicionadas na parte inferior com gradiente escurecido */
+.evento-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+/* Texto das informações do evento */
+.evento-info p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Texto forte das informações do evento */
+.evento-info strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Círculo decorativo com data do evento, posicionado no topo direito */
+.data-circulo {
+  position: absolute;
+  top: -100px;
+  right: 10px;
+  width: 35px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: FFFDFD; /* Atenção: falta o # antes da cor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* Fonte menor para o mês */
+.data-circulo .mes {
+  font-size: 12px;
+}
+
+/* Fonte maior para o dia */
+.data-circulo .dia {
+  font-size: 18px;
+}
+
+/* Container dos avisos com gradiente e bordas arredondadas */
+.avisos-container {
+  background: linear-gradient(135deg, var(--secondary-color), #ffcc02);
+  border-radius: var(--border-radius);
+  padding: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+/* Cartão individual de aviso com sombra, borda esquerda colorida e transição */
+.aviso-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 8px;
+  box-shadow: var(--shadow-light);
+  border-left: 4px solid var(--secondary-color);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de gradiente brilhante ao passar o mouse */
+.aviso-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--secondary-color), #ffed4a, var(--secondary-color));
+  border-radius: var(--border-radius);
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.aviso-card:hover::before {
+  opacity: 0.3;
+}
+
+/* Meta-informações do aviso, como data ou categoria, alinhadas horizontalmente */
+.aviso-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Título do aviso com peso e tamanho maiores */
+.aviso-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Conteúdo do aviso com espaçamento e linha de texto melhorada */
+.aviso-content {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Área de ação do aviso (botões, links, etc) */
+.aviso-action {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+/* Assinatura do aviso alinhada à direita, com estilo itálico e cor secundária */
+.aviso-signature {
+  text-align: right;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* Rodapé da página, centralizado com padding e borda superior */
+.rodape {
+  text-align: center;
+  padding: 24px 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Container das logos no rodapé com alinhamento central */
+.logos-rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagens das logos no rodapé com sombra e efeito hover */
+.logos-rodape img {
+  max-width: 180px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: var(--transition);
+}
+
+.logos-rodape img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+  .app {
+      margin: 0;
+      border-radius: 0;
+  }
+
+  .top-header {
+      padding: 16px 12px;
+  }
+
+  .logo-sustentavel,
+  .logo-siepex {
+      width: 80px;
+  }
+
+  .nav-menu {
+      padding: 12px;
+      gap: 8px;
+  }
+
+  .nav-menu-button {
+      min-height: 60px;
+      font-size: 10px;
+  }
+
+  .content-section {
+      padding: 16px 12px;
+  }
+}
+
+/* Animação para o conteúdo "deslizar" ao entrar */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Aplica a animação slideIn nas seções de conteúdo */
+.content-section {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Estado de foco para acessibilidade em botões do menu */
+.nav-menu-button:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Classe para esconder elementos visualmente, mas manter acessíveis a screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
