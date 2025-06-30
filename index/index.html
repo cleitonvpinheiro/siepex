@@ -44,28 +44,30 @@
 
       <!-- Programação -->
       <section class="programacao content-section" aria-labelledby="programacao-title">
-        <h2 id="programacao-title" class="section-title">📅 Programação</h2>
-        <div class="container-programacao">
-          <div class="carousel-wrapper">
-            <div class="carousel">
-              <article class="evento">
-                <img src="./assets/palestra.png" alt="Evento 1" />
-                <div class="evento-info">
-                  <div class="data-circulo"><div class="mes">Out.</div><div class="dia">16</div></div>
-                  <div><strong>Palestra Sobre I.A</strong><p>Sala 13 prédio 5 - 13:30h</p></div>
-                </div>
-              </article>
-              <article class="evento">
-                <img src="./assets/palestra.png" alt="Evento 2" />
-                <div class="evento-info">
-                  <div class="data-circulo"><div class="mes">Out.</div><div class="dia">17</div></div>
-                  <div><strong>Workshop de Robótica</strong><p>Sala 20 - 15:00h</p></div>
-                </div>
-              </article>
-            </div>
-          </div>
+  <h2 id="programacao-title" class="section-title">📅 Programação</h2>
+  <div class="story-wrapper">
+    <div class="story-container">
+      <article class="evento active">
+        <img src="./assets/palestra.png" alt="Evento 1" />
+        <div class="evento-info">
+          <div class="data-circulo"><div class="mes">Out.</div><div class="dia">16</div></div>
+          <div><strong>Palestra Sobre I.A</strong><p>Sala 13 prédio 5 - 13:30h</p></div>
         </div>
-      </section>
+      </article>
+      <article class="evento">
+        <img src="./assets/palestra.png" alt="Evento 2" />
+        <div class="evento-info">
+          <div class="data-circulo"><div class="mes">Out.</div><div class="dia">17</div></div>
+          <div><strong>Workshop de Robótica</strong><p>Sala 20 - 15:00h</p></div>
+        </div>
+      </article>
+    </div>
+    <div class="story-controls">
+      <button id="prevStory">&#10094;</button>
+      <button id="nextStory">&#10095;</button>
+    </div>
+  </div>
+</section>
 
       <!-- Avisos -->
       <section class="avisos content-section" aria-labelledby="avisos-title">
@@ -95,5 +97,32 @@
 
     </div>
   </div>
+  <script>
+ document.addEventListener('DOMContentLoaded', () => {
+  const prevBtn = document.getElementById('prevStory');
+  const nextBtn = document.getElementById('nextStory');
+  const eventos = document.querySelectorAll('.story-container .evento');
+  let currentIndex = 0;
+
+  function showEvento(index) {
+    eventos.forEach((evento, i) => {
+      evento.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + eventos.length) % eventos.length;
+    showEvento(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % eventos.length;
+    showEvento(currentIndex);
+  });
+
+  // Inicializa mostrando o primeiro evento
+  showEvento(currentIndex);
+});
+</script>
 </body>
 </html>

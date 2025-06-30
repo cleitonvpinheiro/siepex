@@ -6,6 +6,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 /* Centraliza o corpo horizontalmente */
 body {
   display: flex;
@@ -53,6 +57,7 @@ body {
 
 .tela-informacoes {
   width: 100%;
+  height: 100%;
   max-width: 450px;
   position: relative;
   padding: 0 16px; /* Garante espaçamento lateral em telas pequenas */
@@ -149,7 +154,7 @@ body {
 /* ======================== */
 
 .rodape {
-  margin-top: 40px;
+  margin-top: 280px;
   text-align: center;
   padding-bottom: 30px;
 }

@@ -6,6 +6,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 /* Estilo do body */
 body {
   background-color: #f2f2f2;
@@ -19,8 +23,8 @@ body {
   width: 90%; /* Responsivo */
   margin: 0 auto;
   overflow: hidden;
-  
   position: relative;
+  padding-bottom: 40px; /* leve espaço inferior */
 }
 
 /* Botão de voltar */
@@ -47,16 +51,16 @@ body {
 }
 
 /* Imagem do palestrante */
- .palestrante-img {
-    width: 100%;
-    height: 310px; /* ajuste conforme necessário */
-    object-fit: cover;
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom: 15px solid #006233;
-  }
+.palestrante-img {
+  width: 100%;
+  height: 310px; /* ajuste conforme necessário */
+  object-fit: cover;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom: 15px solid #006233;
+}
 
 /* Caixa de informações */
 .info-box {
@@ -126,52 +130,44 @@ body {
   margin-top: 20px;
 }
 
-/* Rodapé fixo */
+/* Rodapé com botões */
 .fixo-rodape {
-  position: relative;
-  bottom: 16px;
   max-width: 400px;
   width: 90%;
-  margin: 10px auto;
+  margin: 60px auto 20px; /* espaçamento superior aumentado */
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
-  flex-wrap: wrap; /* Garante quebra se necessário */
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Botão inscrever-se */
 .btn-inscrever {
-  width: 100%;
-  max-width: 286px;
+  margin-top: 200px;
+  flex: 1;
   height: 49px;
   background-color: #3F65FF;
   color: white;
   font-weight: 600;
-  margin: 20px auto;
-  padding: 20px 30px;
+  padding: 0 24px;
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
   font-size: 14px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
 
-
 /* Ícone de compartilhamento */
 .share-icon img {
+  margin-top: 200px;
   width: 31px;
   height: 31px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  margin: 20px auto 30px;
-  display: block;
 }
-
-/* Hover ícone */
-
 
 /* Media Query para telas menores */
 @media (max-width: 480px) {
@@ -186,8 +182,13 @@ body {
   }
 
   .btn-inscrever {
-    padding: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 13px;
+    padding: 10px 24px;
+    height: 45px;
+    border-radius: 22px;
+    width: 100%;
   }
 
   .descricao p {
@@ -211,7 +212,7 @@ body {
   }
 
   .share-icon img {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 300px;
+    margin-bottom: 0px;
   }
 }
