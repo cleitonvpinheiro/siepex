@@ -7,7 +7,12 @@
 }
 
 html, body {
+    margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100%;
+  overflow-x: hidden;
+
 }
 
 /* Estilo do body */
@@ -20,7 +25,7 @@ body {
   background: url(./assets/bg-decorativo.svg) no-repeat top center;
   background-size: cover;
   max-width: 500px;
-  width: 90%; /* Responsivo */
+  width: 100%; /* Responsivo */
   margin: 0 auto;
   overflow: hidden;
   position: relative;

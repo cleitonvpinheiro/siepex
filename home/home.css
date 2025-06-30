@@ -239,7 +239,7 @@ body {
 /* ------------------------------
    RESPONSIVIDADE EXTRA
 --------------------------------*/
-@media (max-width: 480px) {
+@media (max-width: 550px) {
   .logo-area {
     flex-direction: column;
     align-items: center;
